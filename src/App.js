@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import DBZcard from "./components/DBZCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
+import Container from "./components/Title";
 import DBZCharacters from "./DBZCharacters.json";
 
 
@@ -30,14 +31,15 @@ class App extends Component {
   shuffleClick = id => {
     let DBZclick = this.state.DBZclick;
 
-    if(DBZclick.includes(id)){
-      this.setState({ score: 0, DBZclick: [], Message: "You Guessed Incorrectly, Please Try Again" });
+    if (DBZclick.includes(id)) {
+      this.setState({ score: 0, DBZclick: [], message: "You Guessed Incorrectly, Please Try Again" });
       return;
-    }else{
+    } else {
       DBZclick.push(id)
+      this.setState({ message: "" })
 
-      if(DBZclick.length === 12){
-        this.setState({score: 8, DBZclick: [], Message: "Congratulations!  You have won."});
+      if (DBZclick.length === 12) {
+        this.setState({ score: 12, DBZclick: [], message: "Congratulations!  You have won." });
         return;
       }
 
@@ -49,35 +51,37 @@ class App extends Component {
       }
     }
   }
-  
 
- 
+
+
 
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
-    return <div>(
-      <Wrapper>
-        <Title>
-        <header className="App-header">
-          <h1 className="App-title">Clicky-Game</h1>
-           
-        </header>
-        </Title>
-        <p className="card-text">Click Count: {this.state.score}</p>
-        {this.state.DBZCharacters.map(friend => (
-          <DBZcard
-            shuffleClick={this.shuffleClick}
-            id={friend.id}
-            key={friend.id}
-            image={friend.image}
-            
-          />
-        ))}
-      </Wrapper>
-    );
+    return <div>
+      <Container>
+      <div className="row">
+            <div className="col-12">
+              <h1>Clicky Game</h1>
+              <p className="card-text">Click Count: {this.state.score}</p>
+              <Title message={this.state.message} />
+              </div>
+          </div>
+        <Wrapper>
+          {this.state.DBZCharacters.map(friend => (
+            <DBZcard
+              shuffleClick={this.shuffleClick}
+              id={friend.id}
+              key={friend.id}
+              image={friend.image}
+            />
+          ))}
+        </Wrapper>
+      </Container>
+      );
     </div>
   }
 }
+
 
 export default App;
 

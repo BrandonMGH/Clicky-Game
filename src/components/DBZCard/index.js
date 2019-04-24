@@ -14,10 +14,7 @@ function DBZcard(props) {
       </div >
       <div className="content">
         <ul>
-          <li>
-          
-            
-          </li>
+         
         </ul>
       </div>
       
