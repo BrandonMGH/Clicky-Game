@@ -7,5 +7,7 @@
   padding: 50px;
   justify-content: space-around;
   align-content: flex-start;
-   overflow: auto; 
+  overflow: auto; 
+  background-size: cover;
+  background-position: center;
 }

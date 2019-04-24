@@ -33,7 +33,7 @@ class App extends Component {
 
     if (DBZclick.includes(id)) {
       this.setState({ score: 0, DBZclick: [], message: "You Guessed Incorrectly, Please Try Again" });
-      return;
+      return
     } else {
       DBZclick.push(id)
       this.setState({ message: "" })
@@ -61,7 +61,8 @@ class App extends Component {
       <Container>
       <div className="row">
             <div className="col-12">
-              <h1>Clicky Game</h1>
+              <h1> Dragon Ball Image Clicker</h1>
+              <h3> Click an image to increase your score.  Make sure you don't click the same image!</h3>
               <p className="card-text">Click Count: {this.state.score}</p>
               <Title message={this.state.message} />
               </div>

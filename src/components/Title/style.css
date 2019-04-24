@@ -1,8 +1,23 @@
 .title {
+  font-family: 'Dokdo', cursive;
   width: 100%;
   text-align: center;
-  font-size: 3rem;
-  text-decoration: underline;
-  color: #2A77AE;
+  font-size: 20px;
+  background-image:url("https://cdn.gamerant.com/wp-content/uploads/dragon-ball-fighterz-summon-shenron.jpg.optimal.jpg");
+  color: orange;
   margin-bottom: 50px;
+  background-size: cover;
+  background-position: center;
+  text-shadow: 2px 2px black;
+  
+}
+
+h1 {
+  /* padding-top: 50px;  */
+  margin-bottom: 50px; 
+}
+
+p {
+  padding: 25px; 
+
 }
