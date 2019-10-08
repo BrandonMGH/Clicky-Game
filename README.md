@@ -1,7 +1,7 @@
 
 # CLICKY GAME #
 
-![DBZTitleImage](DBZCardGameImage.png)
+![DBZTitleImage](DBZCardGameImg.png)
 
 ## APP USE INSTRUCTIONS ## 
 
