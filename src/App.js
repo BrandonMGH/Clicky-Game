@@ -3,22 +3,80 @@ import DBZcard from "./components/DBZCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import Container from "./components/Title";
-import DBZCharacters from "./DBZCharacters.json";
+// import DBZCharacters from "./DBZCharacters.json";
+import  Gohan  from "./images/Gohan.jpg";
+import  Goku  from "./images/Goku.jpg";
+import  Androids  from "./images/Androids.jpg";
+import  Android21  from "./images/Android21.jpg";
+import  Piccolo from "./images/Piccolo.png";
+import Vegeta from "./images/Vegeta.jpg";
+import Broly from "./images/Broly.jpg";
+import Cell from "./images/Cell.jpg";
+import Trunks from "./images/Trunks.jpg";
+import Frieza from "./images/Frieza.jpg";
+import SuperBoo from "./images/SuperBoo.jpg";
+import Janemba from "./images/Janemba.jpg";
 
 
 
-// function shuffle(array) {
-//   for (let i = array.length - 1; i > 0; i--) {
-//     let j = Math.floor(Math.random() * (i + 1));
-//     [array[i], array[j]] = [array[j], array[i]];
-//   }
-//   return array
-// }
+let DBZCharacters = [
+  {
+    id: 1,
+    image: Goku
+  },
+  {
+    id: 2,
+    image: Gohan
+  },
+  {
+    id: 3,
+    image: Android21
+  },
+  {
 
+    id: 4,
+    image: Androids
+  },
+  {
+    id: 5,
+    image: Piccolo
+  },
+  {
+    id: 6,
+    image: Vegeta
+  },
+  {
+    id: 7,
+    image: Broly
+  },
+  {
+
+    id: 8,
+    image: Cell
+  },
+  {
+    id: 9,
+    image: Trunks
+  },
+  {
+    id: 10,
+    image: Frieza
+  },
+  {
+    id: 11,
+    image: SuperBoo
+  },
+  {
+
+    id: 12,
+    image: Janemba
+  },
+]
 
 
 
 class App extends Component {
+
 
   state = {
     DBZCharacters,
@@ -38,8 +96,8 @@ class App extends Component {
       DBZclick.push(id)
       this.setState({ message: "" })
 
-      if (DBZclick.length === 12) {
-        this.setState({ score: 12, DBZclick: [], message: "Congratulations!  You have won." });
+      if (DBZclick.length === DBZCharacters.length) {
+        this.setState({ score: DBZCharacters.length, DBZclick: [], message: "Congratulations!  You have won." });
         return;
       }
 
